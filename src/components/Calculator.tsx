@@ -1,6 +1,56 @@
+import { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Calculator() {
+  const [number, setNumber] = useState("0");
+  const calc = (input: string) => {
+    switch (input) {
+      case "DEL":
+        // remove the last character from the number string
+        setNumber((prevNumber) =>
+          prevNumber.length === 1 ? "0" : prevNumber.slice(0, -1)
+        );
+        break;
+      case "Reset":
+        // reset the number to 0
+        setNumber("0");
+        break;
+      case "=":
+        // evaluate the expression and update the number state
+        try {
+          setNumber(eval(number).toString());
+        } catch (error) {
+          setNumber("Error");
+        }
+        break;
+      default:
+        // append the input to the current number string
+        setNumber((prevNumber) =>
+          prevNumber === "0" ? input : prevNumber + input
+        );
+        break;
+    }
+  };
+
+
+  const Key = ({
+    children,
+    isBottomKeys,
+  }: {
+    children: string;
+    isBottomKeys?: boolean;
+  }) => {
+    return (
+      <button
+        onClick={() => calc(children)}
+        className={`btn btn-accent font-extrabold text-xl ${
+          isBottomKeys ? "col-span-2" : ""
+        }`}
+      >
+        {children}
+      </button>
+    );
+  };
   return (
     <div className="w-4/5 flex flex-col gap-6 min-h-[80vh]">
       {/* Top start*/}
@@ -14,7 +64,7 @@ export default function Calculator() {
 
       {/* Number display start */}
       <div className="flex items-center justify-end h-20 px-4 text-4xl font-extrabold leading-tight tracking-wide rounded-2xl bg-base-200">
-        39,999
+        {number}
       </div>
       {/* Number display start */}
 
@@ -42,21 +92,3 @@ export default function Calculator() {
     </div>
   );
 }
-
-const Key = ({
-  children,
-  isBottomKeys,
-}: {
-  children: string;
-  isBottomKeys?: boolean;
-}) => {
-  return (
-    <button
-      className={`btn btn-accent font-extrabold ${
-        isBottomKeys ? "col-span-2" : ""
-      }`}
-    >
-      {children}
-    </button>
-  );
-};
