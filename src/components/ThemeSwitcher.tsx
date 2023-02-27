@@ -11,21 +11,21 @@ export default function ThemeSwitcher() {
       <span className="leading-tight tracking-widest uppercase">theme</span>
       <div className="flex gap-4">
         <input
-          data-set-theme="retro"
+          data-set-theme="halloween"
           type="radio"
           name="radio-1"
           className="radio"
           data-act-class="bg-primary"
         />
         <input
-          data-set-theme="dark"
+          data-set-theme="synthwave"
           type="radio"
           name="radio-1"
           className="radio"
           data-act-class="bg-primary"
         />
         <input
-          data-set-theme="light"
+          data-set-theme="lemonade"
           type="radio"
           name="radio-1"
           className="radio"

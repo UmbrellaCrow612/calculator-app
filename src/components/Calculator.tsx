@@ -53,7 +53,7 @@ export default function Calculator() {
       return (
         <button
           onClick={() => calc(children)}
-          className={`kbd font-extrabold text-xl ${
+          className={`kbd hover:bg-accent transition-all font-extrabold text-xl ${
             isBottomKeys ? "col-span-2" : ""
           } ${isFinal ? "col-span-4" : ""}`}
         >
