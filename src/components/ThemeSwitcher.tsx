@@ -15,18 +15,21 @@ export default function ThemeSwitcher() {
           type="radio"
           name="radio-1"
           className="radio"
+          data-act-class="bg-primary"
         />
         <input
           data-set-theme="dark"
           type="radio"
           name="radio-1"
           className="radio"
+          data-act-class="bg-primary"
         />
         <input
           data-set-theme="light"
           type="radio"
           name="radio-1"
           className="radio"
+          data-act-class="bg-primary"
         />
       </div>
     </div>
