@@ -65,7 +65,7 @@ export default function Calculator() {
   );
 
   return (
-    <div className="w-4/5 flex flex-col gap-6 min-h-[80vh]">
+    <div className="w-4/5 md:max-w-xl flex flex-col gap-6 min-h-[80vh]">
       {/* Top start*/}
       <div className="flex items-center justify-between h-auto">
         <h1 className="text-4xl font-extrabold leading-tight tracking-wide">
