@@ -51,12 +51,12 @@ const Key = ({
   isBottomKeys?: boolean;
 }) => {
   return (
-    <div
+    <button
       className={`btn btn-accent font-extrabold ${
         isBottomKeys ? "col-span-2" : ""
       }`}
     >
       {children}
-    </div>
+    </button>
   );
 };
